@@ -1,0 +1,27 @@
+<div class="container">
+  <br>
+  <br>
+  <div *ngIf="loadingAverage" class="row">
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="col s4 offset-s4">
+      <mat-spinner style="margin-left: 20%;" class="spinnerLoader" color="primary" diameter="200"></mat-spinner>
+    </div>
+
+  </div>
+
+  <div style="display: block" *ngIf="!loadingAverage">
+    <canvas baseChart
+      [data]="polarAreaChartData"
+      [labels]="polarAreaChartLabels"
+      [legend]="polarAreaLegend"
+      [chartType]="polarAreaChartType">
+    </canvas>
+    <div class="row">
+      <div class="col s12 center"><h5><i>{{ 'HINT_AVERAGE_TIME' | translate }}</i></h5></div>
+    </div>
+  </div>
+
+</div>

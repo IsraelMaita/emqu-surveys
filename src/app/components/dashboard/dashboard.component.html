@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row">
+    <div class="col s4 offset-s4 center">
+      <h2>{{ 'STATISTICS' | translate }}</h2>
+    </div>
+  </div>
+</div>
+
+<mat-tab-group>
+  <mat-tab label="{{ 'INDICATORS' | translate }}">
+    <br>
+    <br>
+    <br>
+    <div class="container">
+      <app-indicators></app-indicators>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="{{ 'DEMOGRAPHIC' | translate }}">
+    <app-graphs></app-graphs>
+  </mat-tab>
+
+  <mat-tab label="{{ 'AVERAGE_USE' | translate }}">
+    <app-average-time></app-average-time>
+  </mat-tab>
+
+</mat-tab-group>

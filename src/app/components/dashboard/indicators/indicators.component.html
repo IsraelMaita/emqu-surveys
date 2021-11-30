@@ -1,0 +1,75 @@
+<div class="row">
+  <div class="col s4">
+    <mat-card class="indicatorsCard">
+      <mat-card-title>{{ 'TOTAL_SURVEYS' | translate }}</mat-card-title>
+      <mat-card-content>
+        <br>
+        <br>
+
+        <div class="row" *ngIf="loadingTotal">
+          <div class="col s12">
+            <mat-spinner style="margin-left: 35%;" class="spinnerLoader" color="primary" diameter="100"></mat-spinner>
+          </div>
+        </div>
+
+        <div *ngIf="!loadingTotal">
+          <br>
+          <h1 style="font-size: 800%;" class="center">{{surveysTotal}}</h1>
+          <br>
+          <br>
+        </div>
+        <br>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div class="col s4">
+    <mat-card class="indicatorsCard">
+      <mat-card-title>{{ 'MOST_POPULAR_SOCIAL_NETWORK' | translate }}</mat-card-title>
+      <mat-card-content>
+
+        <div class="row" *ngIf="loadingPopularity">
+          <br>
+          <br>
+          <div class="col s12">
+            <mat-spinner style="margin-left: 35%;" class="spinnerLoader" color="primary" diameter="100"></mat-spinner>
+          </div>
+          <br>
+          <br>
+        </div>
+        
+        <div *ngIf="!loadingPopularity">
+          <br>
+          <br>
+          <img class="networkImage" src="{{mostImage}}">
+          <br>
+        </div>
+
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div class="col s4">
+    <mat-card class="indicatorsCard">
+      <mat-card-title>{{ 'LESS_POPUPLAR_SOCIAL_NETWORK' | translate }}</mat-card-title>
+      <mat-card-content>
+
+        <div class="row" *ngIf="loadingPopularity">
+          <br>
+          <br>
+          <div class="col s12">
+            <mat-spinner style="margin-left: 35%;" class="spinnerLoader" color="primary" diameter="100"></mat-spinner>
+          </div>
+          <br>
+        </div>
+
+        <div *ngIf="!loadingPopularity">
+          <br>
+          <br>
+          <img class="networkImage" src="{{lessImage}}">
+          <br>
+          <br>
+        </div>
+
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

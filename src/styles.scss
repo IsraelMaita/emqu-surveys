@@ -1,1 +1,76 @@
-/* You can add global styles to this file, and also import other style files */
+@use '@angular/material' as mat;
+@include mat.core();
+
+//https://material.io/design/color/
+$primary: mat.define-palette(mat.$blue-palette, 900);
+$accent: mat.define-palette(mat.$orange-palette, 700);
+$warn: mat.define-palette(mat.$red-palette);
+
+$primaryDark: mat.define-palette(mat.$cyan-palette, A700);
+$accentDark: mat.define-palette(mat.$deep-purple-palette, 700);
+
+$light-theme: mat.define-light-theme((
+  color: (
+    primary: $primary,
+    accent: $accent,
+    warn: $warn,
+  )
+));
+
+$dark-theme: mat.define-dark-theme((
+  color: (
+    primary: $primaryDark,
+    accent: $accentDark,
+    warn: $warn,
+  )
+));
+
+.color-scheme-light {
+  @include mat.all-component-themes($light-theme);
+}
+
+.color-scheme-dark {
+  @include mat.all-component-themes($dark-theme);
+}
+
+html, body { height: 100%; }
+
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+//Snackbar Styles
+.mat-simple-snackbar {
+  justify-content: center !important;
+}
+
+.success-snackbar {
+  color:#000 !important;
+  background: #4caf50 !important;
+}
+
+.warning-snackbar {
+  color:#000 !important;
+  background: #ffca28 !important;
+}
+
+.error-snackbar {
+  color:#fff !important;
+  background: #e53935 !important;
+}
+
+.fullFormField {
+  width: 100%;
+}
+
+// Color
+@import "app/css/color-variables";
+@import "app/css/color-classes";
+
+// Variables;
+@import "app/css/variables";
+
+// Components
+@import "app/css/grid";
+
+// Globals
+@import "app/css/global";

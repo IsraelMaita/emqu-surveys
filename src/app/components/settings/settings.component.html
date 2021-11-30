@@ -1,0 +1,70 @@
+<div class="container">
+  <div class="row">
+    <div class="col s4 offset-s4 center">
+      <h2>{{ 'SETTINGS_AND_TOOLS' | translate }}</h2>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col s4">
+    <mat-card class="settingsCard">
+      <mat-card-title class="center">{{ 'LANGUAGE' | translate }}</mat-card-title>
+      <mat-card-content>
+        <br>
+        <br>
+
+        <div class="row">
+          <div class="col s12 center">
+            <button mat-raised-button color="accent" (click)="onSelectSpanish()">{{ 'SPANISH' | translate }}</button>
+              &nbsp;
+            <button mat-raised-button color="accent" (click)="onSelectEnglish()">{{ 'ENGLISH' | translate }}</button>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div class="col s4">
+    <mat-card class="settingsCard">
+      <mat-card-title class="center">{{ 'THEME' | translate }}</mat-card-title>
+      <mat-card-content>
+        <br>
+        <br>
+
+        <div class="row">
+          <div class="col s12 center">
+            <button mat-raised-button color="accent" (click)="onSelectDarkMode()">{{ 'DARK_THEME' | translate }}</button>
+              &nbsp;
+            <button mat-raised-button color="accent" (click)="onSelectLightMode()">{{ 'LIGHT_THEME' | translate }}</button>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div class="col s4">
+    <mat-card class="settingsCard">
+      <mat-card-title class="center">{{ 'SURVEYS' | translate }}</mat-card-title>
+      <mat-card-content>
+        <br>
+        <br>
+
+        <div class="row">
+          <div class="col s12 center">
+
+            <div *ngIf="processing">
+              <mat-spinner style="margin-left: 45%;" class="spinnerLoader" color="primary" diameter="35"></mat-spinner>
+            </div>
+            <div *ngIf="!processing">
+              <button mat-raised-button color="accent" (click)="onDeleteAllSurveys()">{{ 'DELETE_ALL_SURVEYS' | translate }}</button>
+                &nbsp;
+              <button mat-raised-button color="accent" (click)="onCreateRandomSurvey()">{{ 'AUTO_GENERATE_SURVEY' | translate }}</button>
+            </div>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  
+</div>

@@ -1,0 +1,40 @@
+.containerStyle {
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.smallSidenavStyle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 6em;
+  border: none !important;
+
+  mat-list-item {
+    min-height: 4em;
+
+    mat-icon {
+      position: absolute;
+      left: 50%;
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+    }
+  
+    p {
+      font-size: x-small;
+      font-weight: lighter;
+      position: absolute;
+      left: 50%;
+      top: 100%;
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+.activeItem {
+  color: #00B8D4 !important;
+}

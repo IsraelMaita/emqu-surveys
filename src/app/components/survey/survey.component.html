@@ -1,0 +1,210 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col s4 offset-s4 center">
+      <h2>{{ 'SOCIAL_NETWORKS' | translate }}</h2>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col s12">
+
+      <!-- Survey Stepper -->
+      <mat-stepper class="z-depth-5" orientation="vertical" [linear]="true" #stepper>
+        
+        <!-- "About You" Step -->
+        <mat-step [stepControl]="aboutYouFormGroup">
+          <form [formGroup]="aboutYouFormGroup">
+            <ng-template matStepLabel>{{ 'ABOUT_YOU' | translate }}</ng-template>
+            <div class="row">
+              
+              <!-- Name Input -->
+              <div class="col s6">
+                <mat-form-field appearance="outline" class="fullFormField">
+                  <mat-label>{{ 'NAME' | translate }}</mat-label>
+                  <input matInput formControlName="name" required>
+                </mat-form-field>
+              </div>
+
+              <!-- Email Input -->
+              <div class="col s6">
+                <mat-form-field appearance="outline" class="fullFormField">
+                  <mat-label>{{ 'EMAIL' | translate }}</mat-label>
+                  <input type="email" matInput formControlName="email" required>
+                </mat-form-field>
+              </div>
+
+            </div>
+
+            <div class="row">
+
+              <!-- Gender Selector -->
+              <div class="col s6">
+                <mat-form-field  appearance="outline" class="fullFormField">
+                  <mat-label>{{ 'GENDER' | translate }}</mat-label>
+                  <mat-select formControlName="gender">
+                    <mat-option *ngFor="let gender of genders" [value]="gender.key">
+                      {{ gender.value | translate }}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+
+              <!-- Age Range Selector -->
+              <div class="col s6">
+                <mat-form-field  appearance="outline" class="fullFormField">
+                  <mat-label>{{ 'AGE_RANGE' | translate }}</mat-label>
+                  <mat-select formControlName="ageRange">
+                    <mat-option *ngFor="let ageRange of ageRanges" [value]="ageRange.key">
+                      {{ ageRange.value | translate }}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+
+            </div>
+
+            <br>
+
+            <div class="right">
+              <button mat-raised-button color="accent" matStepperNext>{{ 'NEXT' | translate }}</button>
+            </div>
+            
+            <br>
+
+          </form>
+        </mat-step> <!-- "About You" Step End -->
+
+        <!-- "Favorite Social Network" Step -->
+        <mat-step [stepControl]="favoriteNetworkFormGroup">
+          <form [formGroup]="favoriteNetworkFormGroup">
+            <ng-template matStepLabel>{{ 'FAVORITE_SOCIAL_NETWORK' | translate }}</ng-template>
+            
+            <div class="row">
+              
+              <!-- Social Network Selector -->
+              <div class="col s6">
+                <mat-form-field appearance="outline" class="fullFormField">
+                  <mat-label>{{ 'SOCIAL_NETWORK_NAME' | translate }}</mat-label>
+                  <mat-select formControlName="favoriteNetwork">
+                    <mat-option *ngFor="let socialNetwork of socialNetworks" [value]="socialNetwork.key">
+                      {{ socialNetwork.value | translate }}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+
+              <!-- Usage Network Selector -->
+              <div class="col s6">
+                <mat-form-field appearance="outline" class="fullFormField">
+                  <mat-label>{{ 'FAVORITE_TIME_TO_USE_IT' | translate }}</mat-label>
+                  <mat-select formControlName="favoriteTime">
+                    <mat-option *ngFor="let usageTime of usageTimes" [value]="usageTime.key">
+                      {{ usageTime.value | translate }}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+
+            </div>
+
+            <br>
+
+            <div class="right">
+              <button mat-raised-button color="accent" matStepperPrevious>{{ 'PREVIOUS' | translate }}</button>
+              &nbsp;
+              <button mat-raised-button color="accent" matStepperNext>{{ 'NEXT' | translate }}</button>
+            </div>
+            
+            <br>
+            <br>
+
+          </form>
+        </mat-step><!-- "Favorite Social Network" Step End -->
+
+        <!-- "Social Network Use" Step -->
+        <mat-step [stepControl]="averageTimesFormGroup">
+          <form [formGroup]="averageTimesFormGroup">
+            <ng-template matStepLabel>{{ 'SOCIAL_NETWORK_USE' | translate }}</ng-template>
+            
+            <br>
+            <h5><i>{{ 'HINT_AVERAGE_TIME' | translate }}</i></h5>
+            <br>
+            
+            <div class="row">
+
+              <!-- Facebook Time Input -->
+              <div class="col s4">
+                <mat-form-field appearance="outline" class="fullFormField">
+                  <mat-label>{{ 'FACEBOOK' | translate }}</mat-label>
+                  <input type="number" matInput formControlName="facebook" required>
+                </mat-form-field>
+              </div>
+
+              <!-- Whatsapp Time Input -->
+              <div class="col s4">
+                <mat-form-field appearance="outline" class="fullFormField">
+                  <mat-label>{{ 'WHATSAPP' | translate }}</mat-label>
+                  <input type="number" matInput formControlName="whatsapp" required>
+                </mat-form-field>
+              </div>
+
+              <!-- Twitter Time Input -->
+              <div class="col s4">
+                <mat-form-field appearance="outline" class="fullFormField">
+                  <mat-label>{{ 'TWITTER' | translate }}</mat-label>
+                  <input type="number" matInput formControlName="twitter" required>
+                </mat-form-field>
+              </div>
+
+            </div>
+
+            <div class="row">
+
+              <!-- Instagram Time Input -->
+              <div class="col s4">
+                <mat-form-field appearance="outline" class="fullFormField">
+                  <mat-label>{{ 'INSTAGRAM' | translate }}</mat-label>
+                  <input type="number" matInput formControlName="instagram" required>
+                </mat-form-field>
+              </div>
+
+              <!-- TikTok Time Input -->
+              <div class="col s4">
+                <mat-form-field appearance="outline" class="fullFormField">
+                  <mat-label>{{ 'TIKTOK' | translate }}</mat-label>
+                  <input type="number" matInput formControlName="tiktok" required>
+                </mat-form-field>
+              </div>
+
+            </div>
+
+            <br>
+
+            <div class="right" *ngIf="!surveyProcess && newSurvey">
+              <button mat-raised-button color="accent" matStepperPrevious>{{ 'PREVIOUS' | translate }}</button>
+              &nbsp;
+              <button mat-raised-button color="accent" (click)="onSendSurvey()">{{ 'SEND_SURVEY' | translate }}</button>
+            </div>
+
+            <div class="right" *ngIf="surveyProcess">
+              <mat-spinner class="spinnerLoader" color="primary" diameter="35"></mat-spinner>
+            </div>
+            
+            <div class="right" *ngIf="!surveyProcess && !newSurvey">
+              <button mat-raised-button color="accent" (click)="stepper.reset(); onResetSurvey();">{{ 'NEW_SURVEY' | translate }}</button>
+            </div>
+
+            <br>
+            <br>
+
+          </form>
+        </mat-step> <!-- "Social Network Use" Step End -->
+
+      </mat-stepper> <!-- Survey Stepper End -->
+
+    </div>
+  </div>
+</div>
